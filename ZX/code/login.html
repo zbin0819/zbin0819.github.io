@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>登录</title>
+    <link rel="stylesheet" href="../css/login.css">
+    <script src="../js/zepto.js"></script>
+    <script src="../js/login.js"></script>
+    <script src="../js/cookie.js"></script>
+</head>
+<body>
+<div class="wrapper">
+    <header>
+        <a class="iconfont" href="javascript:;">&#xe610;</a>
+        <span>登录</span>
+        <a href="register.html" class="register">注册</a>
+    </header>
+    <div id="container">
+        <form action="index.html" id="form">
+            <input type="text" name="text" placeholder="账号" id="txt" autocomplete="off">
+            <span class="span1"></span>
+            <input type="password"  name="pwd" placeholder="密码" id="pwd" autocomplete="off">
+            <span class="span2"></span>
+           <p>
+               <em class="sel"></em>
+               <span id="rember">记住密码</span>
+               <a href="javascript:;">忘记密码？</a>
+           </p>
+            <input type="submit" value="登录" name="submit">
+        </form>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,149 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body,html{
+    height: 100%;
+    font-family: Helvetica Neue, Helvetica, STHeiTi, sans-serif;
+    font-size: 0.16rem;
+    line-height: 1.5;
+}
+html{
+    font-size:15.625vw;
+}
+ul li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+img{
+    display: block;
+    border:0;
+    vertical-align: bottom;
+}
+strong,em{
+    font-style: normal;
+}
+@font-face {font-family: 'iconfont';
+    src: url('../font/iconfont.eot'); /* IE9*/
+    src: url('../font/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../font/iconfont.woff') format('woff'), /* chrome、firefox */
+    url('../font/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('../font/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+.iconfont{
+    font-family:"iconfont" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;}
+/*------------------header----------------------*/
+.wrapper{
+    width:100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+header{
+    width:100%;
+    height:0.87rem;
+    line-height: 0.87rem;
+    background: #e4366b;
+    background-size: cover;
+    font-weight: bold;
+}
+header .iconfont{
+    float: left;
+    font-size: .45rem;
+    margin-left: .23rem;
+    color: #000;
+}
+header span{
+    float: left;
+    margin-left: 1.9rem;
+    font-size: 0.4rem;
+    color:#fff;
+}
+header .register{
+    display: inline-block;
+    float: left;
+    margin-left: 1.3rem;
+    margin-top: 0.15rem;
+    width:1.08rem;
+    height:0.54rem;
+    border: 1px solid #DEDEDE;
+    border-radius: 0.1rem;
+    color:#FFF;
+    font-size:0.25rem;
+    text-align: center;
+    line-height:0.54rem;
+}
+/*-------------------------------container-----------------------------*/
+#container{
+    flex: 1;
+    overflow-y: scroll;
+    font-size: 0.32rem;
+    color:#000;
+}
+#container .span1,#container .span2{
+    display: block;
+    width:5.6rem;
+    height:0.76rem;
+    margin-left: 0.4rem;
+    line-height:0.76rem ;
+    font-size: 0.25rem;
+    color:red;
+}
+#container a{
+    text-decoration: underline;
+    color:gray;
+    font-size: 0.3rem;
+}
+#container input{
+    display: block;
+    font-size: 0.33rem;
+    line-height: 0.76rem;
+    margin-left: 0.4rem;
+}
+#container input[name=text],#container input[name=pwd]{
+    width:5.6rem;
+    height:0.76rem;
+    border: 1px solid #666;
+    border-radius: 0.1rem;
+    text-indent: 0.25rem;
+}
+#container input[name=text]{
+    margin-top: 0.6rem;
+}
+#container p{
+    height:0.4rem;
+    line-height: 0.4rem;
+    margin-top: 0.4rem;
+    margin-left: 0.4rem;
+}
+#container p span{
+    margin-right: 0.46rem;
+}
+#container em{
+    display: inline-block;
+    width: 0.28rem;
+    height:0.3rem;
+    border:2px solid #a1a1a1;
+    background: #fff;
+    margin-right: 0.13rem;
+    vertical-align: middle;
+    background-size: cover;
+}
+#container input[name=submit]{
+    width:5.6rem;
+    height:0.9rem;
+    background-color: #ec4477;
+    text-align: center;
+    line-height:0.9rem;
+    color:#fff;
+    border-radius: 0.1rem;
+    margin-top: 0.52rem;
+}

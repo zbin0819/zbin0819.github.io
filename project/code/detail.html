@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>商品详情页</title>
+	<link rel="stylesheet" type="text/css" href="../css/common.css">
+	<link rel="stylesheet" type="text/css" href="../css/index.css">
+	
+	<link rel="shortcut icon" href="http://ucenter.b5m.com/favicon.ico?_=" type="image/x-ion">
+	<script type="text/javascript" src="../js/jQuery.js"></script>
+	<script type="text/javascript" src="../js/index.js"></script>
+	<script type="text/javascript" src="../js/detail.js"></script>
+	<script type="text/javascript" src="../js/cookie.js"></script>
+</head>
+<body>
+	<div id="topBar" class="minWidth">
+		<div class="wraperCenter">
+			<div class="b5m_logo left">
+				<a href="D:/WWW/project/code/index.html">
+					<img src="../img/slogen.png" style="vertical-align: middle">
+					帮海贝，畅享全球品质生活！
+				</a>
+			</div>
+			<div class="align right">
+				<a class="qq" href="javascript:;"></a>
+				<a class="wx" href="javascript:;"></a>
+				<a class="wb" href="javascript:;"></a>
+				<a href="javascript:;">登录</a>
+				<a href="javascript:;">注册</a>
+				<a class="news" href="javascript:;">
+					消息
+					<div class="message overHidden">
+						<h3>我的消息</h3>
+						<img src="../img/a.png" style="padding: 20px 0">
+						<p>暂时还没有您的消息</p>
+						<div class="check">查看全部</div>
+					</div>
+				</a>
+				<a class="phone" href="javascript:;">
+					手机版
+					<div class="ewm overHidden"></div>
+				</a>
+				<a href="javascript:;">我的订单</a>
+				<a href="javascript:;">我的收藏</a>
+				<a href="javascript:;">帮助中心</a>
+			</div>
+		</div>
+	</div>
+	<div id="header" class="overHidden minWidth">
+		<div class="wraperCenter">
+			<div class="logo left">
+				<a href="javascript">
+					<img src="../img/logo.png">
+				</a>
+			</div>
+			<div class="search overHidden left">
+				<form>
+					<input class="txt left" type="text" name="" placeholder="在这里淘遍全球正品好货">
+					<button class="btn left">搜索</button>
+				</form>
+				<div class="searchHot left">
+					<a class="red" href="javascript:;">大扫除</a>
+					<a class="red" href="javascript:;">开学季</a>
+					<a href="javascript:;">面膜</a>
+					<a href="javascript:;">防晒</a>
+					<a href="javascript:;">洗发护发</a>
+					<a href="javascript:;">裸妆</a>
+					<a class="red" href="javascript:;">健康生活</a>
+					<a href="javascript:;">宝宝哺乳</a>
+					<a href="javascript:;">身体护理</a>
+					<a href="javascript:;">卸妆</a>
+					<a class="red" href="javascript:;">纸尿裤</a>
+				</div>
+			</div>
+			<table class="tab right">
+				<tr><td><img src="../img/t1.png"></td><td><img src="../img/t2.png"></td><td class="lastTd">常见问题</td></tr>
+			</table>
+		</div>
+	</div>
+	<div id="nav_nf" class="nav_nf minWidth">
+		<div class="wraperCenter">
+			<ul class="navList left">
+				<li class="firstLi">
+					<a href="javascript:;">首页</a>
+				</li>
+				<li>
+					<a href="javascript:;">美妆个护<i class="iconfont">&#xe62c;</i>
+					</a>
+					<div class="navinner">
+						<div class="menuLeft left">
+							<div class="menu-l-top overHidden">
+								<div class="menu-items left">
+									<h5>魅力彩妆</h5>
+									<a class="red" href="javascript:;">粉饼/粉底　|</a>
+									<a href="javascript:;">BB霜/CC霜　|</a>
+									<a class="red" href="javascript:;">唇彩/唇蜜</a>
+									<a href="javascript:;">卸妆　|</a>
+									<a class="red" href="javascript:;">隔离/妆前　|</a>
+									<a href="javascript:;">眉笔/眉粉</a>
+									<a class="red" href="javascript:;">睫毛膏/液</a>
+									<a href="javascript:;">眼线　|</a>
+									<a class="red" href="javascript:;">散粉/蜜粉　|</a>
+									<a href="javascript:;">美妆工具</a>
+									<a class="red" href="javascript:;">遮瑕</a>
+									<a href="javascript:;">眼影　|</a>
+									<a href="javascript:;">美甲/护甲</a>
+									<a href="javascript:;">腮红　|</a>
+									<a href="javascript:;">修颜</a>
+									<a class="red" href="javascript:;">香水香氛</a>
+								</div>
+								<div class="menu-items left">
+									<h5>面部护理</h5>
+									<a class="red" href="javascript:;">T区护理　|</a>
+									<a href="javascript:;">唇部护理 　|</a>
+									<a class="red" href="javascript:;">护肤套装</a>
+									<a href="javascript:;">眼部护理　|</a>
+									<a class="red" href="javascript:;">精华液　|</a>
+									<a href="javascript:;">乳液/面霜</a>
+									<a class="red" href="javascript:;">面膜</a>
+									<a href="javascript:;">化妆水　|</a>
+									<a class="red" href="javascript:;">防晒修复　|</a>
+									<a href="javascript:;">洁面</a>
+								</div>
+							</div>
+							<div class="menu-l-bottom">
+								<div class="menu-items left">
+									<h5>身体护理</h5>
+									<a class="red" href="javascript:;">特殊护理　|</a>
+									<a href="javascript:;">足部护理 　|</a>
+									<a class="red" href="javascript:;">止汗/脱毛</a>
+									<a href="javascript:;">沐浴用品　|</a>
+									<a class="red" href="javascript:;">身体喷雾　|</a>
+									<a href="javascript:;">驱蚊/爽身</a>
+									<a class="red" href="javascript:;">美体塑身　|</a>
+									<a href="javascript:;">手部护理</a>
+								</div>
+								<div class="menu-items left">
+									<h5>洗发护发</h5>
+									<a class="red" href="javascript:;">护发素/精油　|</a>
+									<a href="javascript:;">洗护套装 　|</a>
+									<a class="red" href="javascript:;">洗发水</a>
+								</div>
+							</div>
+						</div>
+						<div class="menuRight left">
+							<h5>热门品牌</h5>
+							<div class="brands">
+								<table class="brandsTab">
+									<tr>
+										<td><a href="javascript:;"><img src="../img/mz1.jpg"></a></td>
+										<td><a href="javascript:;"><img src="../img/mz2.jpg"></a></td>
+										<td><a href="javascript:;"><img src="../img/mz3.jpg"></a></td>
+									</tr>
+									<tr>
+										<td><a href="javascript:;"><img src="../img/mz2.jpg"></a>
+										</td>
+										<td><a href="javascript:;"><img src="../img/mz3.jpg"></a></td>
+										<td><a href="javascript:;"><img src="../img/mz1.jpg"></a></td>
+									</tr>
+									<tr>
+										<td><a href="javascript:;"><img src="../img/nz1.jpg"></a>
+										</td>
+										<td><a href="javascript:;"><img src="../img/nz2.jpg"></a>
+										</td><td><a href="javascript:;"><img src="../img/nz3.jpg"></a>
+										</td>
+									</tr>
+									<tr>
+										<td><a href="javascript:;"><img src="../img/pp3.png"></a>
+										</td>
+										<td><a href="javascript:;"><img src="../img/mz1.jpg"></a>
+										</td>
+										<td><a href="javascript:;"><img src="../img/pp1.jpg"></a>
+										</td>
+									</tr>
+									<tr>
+										<td><a href="javascript:;"><img src="../img/pp2.png"></a>
+										</td>
+										<td><a href="javascript:;"><img src="../img/pp3.png"></a>
+										</td>
+										<td><a href="javascript:;"><img src="../img/pp4.jpg"></a>
+										</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<a href="javascript:;">母婴专区<i class="iconfont">&#xe62c;</i></a>
+					<div class="navinner">
+						<div class="menuLeft left">
+							<div class="menu-l-top overHidden">
+								<div class="menu-items left">
+									<h5>尿裤湿巾</h5>
+									<a class="red" href="javascript:;">纸尿裤/拉拉裤　|</a>
+									<a href="javascript:;">湿巾　|</a>
+									<a class="red" href="javascript:;">日本花王</a>
+									<a href="javascript:;">丹麦班博　|</a>
+									<a class="red" href="javascript:;">日本尤妮佳</a>
+								</div>
+								<div class="menu-items left">
+									<h5>洗漱护肤</h5>
+									<a class="red" href="javascript:;">衣物护理　|</a>
+									<a href="javascript:;">宝宝口腔 　|</a>
+									<a class="red" href="javascript:;">婴儿护肤</a>
+									<a href="javascript:;">洗发沐浴　|</a>
+									<a class="red" href="javascript:;">艾维诺　|</a>
+									<a href="javascript:;">妙思乐</a>
+									<a class="red" href="javascript:;">面膜</a>
+									<a href="javascript:;">化妆水　|</a>
+									<a class="red" href="javascript:;">防晒修复　|</a>
+									<a href="javascript:;">洁面</a>
+								</div>
+							</div>
+							<div class="menu-l-bottom">
+								<div class="menu-items left">
+									<h5>喂养用品</h5>
+									<a class="red" href="javascript:;">奶具辅助品　|</a>
+									<a href="javascript:;">儿童餐具　|</a>
+									<a class="red" href="javascript:;">奶瓶/奶嘴</a>
+									<a href="javascript:;">妈米　|</a>
+									<a class="red" href="javascript:;">新安怡　|</a>
+									<a href="javascript:;">驱蚊/爽身</a>
+									<a class="red" href="javascript:;">美体塑身</a>
+									<a href="javascript:;">贝亲</a>
+								</div>
+								<div class="menu-items left">
+									<h5>洗发护发</h5>
+									<a class="red" href="javascript:;">护发素/精油　|</a>
+									<a href="javascript:;">洗护套装 　|</a>
+									<a class="red" href="javascript:;">洗发水</a>
+								</div>
+							</div>
+						</div>
+						<div class="menuRight left">
+							<h5>热门品牌</h5>
+							<div class="brands">
+								<table class="brandsTab">
+									<tr>
+										<td><a href="javascript:;"><img src="../img/mz1.jpg"></a></td>
+										<td><a href="javascript:;"><img src="../img/mz2.jpg"></a></td>
+										<td><a href="javascript:;"><img src="../img/mz3.jpg"></a></td>
+									</tr>
+									<tr>
+										<td><a href="javascript:;"><img src="../img/pp1.jpg"></a>
+										</td>
+										<td><a href="javascript:;"><img src="../img/mz3.jpg"></a></td>
+										<td><a href="javascript:;"><img src="../img/mz1.jpg"></a></td>
+									</tr>
+									<tr>
+										<td><a href="javascript:;"><img src="../img/mz1.jpg"></a>
+										</td>
+										<td><a href="javascript:;"><img src="../img/nz2.jpg"></a>
+										</td><td><a href="javascript:;"><img src="../img/nz3.jpg"></a>
+										</td>
+									</tr>
+									<tr>
+										<td><a href="javascript:;"><img src="../img/pp3.png"></a>
+										</td>
+										<td><a href="javascript:;"><img src="../img/mz1.jpg"></a>
+										</td>
+										<td><a href="javascript:;"><img src="../img/pp1.jpg"></a>
+										</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<a href="javascript:;">服饰鞋包<i class="iconfont">&#xe62c;</i></a>
+					<div class="navinner">
+						<div class="menuLeft left">
+							<div class="menu-l-top overHidden">
+								<div class="menu-items left">
+									<h5>热卖女装</h5>
+									<a class="red" href="javascript:;">美腿丝袜</a>
+								</div>
+								<div class="menu-items left">
+									<h5>鞋包配件</h5>
+									<a class="red" href="javascript:;">双肩包　|</a>
+									<a href="javascript:;">单肩包 　|</a>
+									<a class="red" href="javascript:;">手提包</a>
+									<a href="javascript:;">斜挎包　|</a>
+									<a class="red" href="javascript:;">钱包　|</a>
+									<a href="javascript:;">女鞋</a>
+									<a class="red" href="javascript:;">男鞋</a>
+									<a href="javascript:;">太阳镜　|</a>
+								</div>
+							</div>
+						</div>
+						<div class="menuRight left">
+							<h5>热门品牌</h5>
+							<div class="brands">
+								<table class="brandsTab">
+									<tr>
+										<td><a href="javascript:;"><img src="../img/mz1.jpg"></a></td>
+										<td><a href="javascript:;"><img src="../img/mz2.jpg"></a></td>
+										<td><a href="javascript:;"><img src="../img/mz3.jpg"></a></td>
+									</tr>
+									<tr>
+										<td><a href="javascript:;"><img src="../img/pp1.jpg"></a>
+										</td>
+										<td><a href="javascript:;"><img src="../img/mz3.jpg"></a></td>
+										<td><a href="javascript:;"><img src="../img/mz1.jpg"></a></td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<a href="javascript:;">家居生活<i class="iconfont">&#xe62c;</i></a>
+					<div class="navinner">
+						<div class="menuLeft left">
+							<div class="menu-l-top overHidden">
+								<div class="menu-items left">
+									<h5>厨房清洁</h5>
+									<a class="red" href="javascript:;">驱虫除臭　|</a>
+									<a class="red" href="javascript:;">洗洁精</a>
+								</div>
+								<div class="menu-items left">
+									<h5>家居日用</h5>
+									<a class="red" href="javascript:;">滤水壶/滤芯　|</a>
+									<a href="javascript:;">水杯 　|</a>
+									<a class="red" href="javascript:;">保鲜盒</a>
+									<a href="javascript:;">保温杯　|</a>
+									<a class="red" href="javascript:;">眼罩　|</a>
+									<a href="javascript:;">口罩</a>
+									<a class="red" href="javascript:;">其他</a>
+								</div>
+							</div>
+						</div>
+						<div class="menuRight left">
+							<h5>热门品牌</h5>
+							<div class="brands">
+								<table class="brandsTab">
+									<tr>
+										<td><a href="javascript:;"><img src="../img/mz3.jpg"></a></td>
+										<td><a href="javascript:;"><img src="../img/mz1.jpg"></a></td>
+										<td><a href="javascript:;"><img src="../img/mz2.jpg"></a></td>
+									</tr>
+									<tr>
+										<td><a href="javascript:;"><img src="../img/pp1.jpg"></a>
+										</td>
+										<td><a href="javascript:;"><img src="../img/mz3.jpg"></a></td>
+										<td><a href="javascript:;"><img src="../img/pp2.png"></a></td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<a href="javascript:;">食品保健<i class="iconfont">&#xe62c;</i></a>
+					<div class="navinner">
+						<div class="menuLeft left">
+							<div class="menu-l-top overHidden">
+								<div class="menu-items left">
+									<h5>休闲食品</h5>
+									<a class="red" href="javascript:;">冲调饮品　|</a>
+									<a class="red" href="javascript:;">调味粮油</a>
+								</div>
+								<div class="menu-items left">
+									<h5>营养保健</h5>
+									<a class="red" href="javascript:;">正官庄　|</a>
+									<a href="javascript:;">水杯 　|</a>
+									<a class="red" href="javascript:;">保鲜盒</a>
+									<a href="javascript:;">保温杯　|</a>
+									<a class="red" href="javascript:;">眼罩　|</a>
+									<a href="javascript:;">口罩</a>
+									<a class="red" href="javascript:;">其他</a>
+								</div>
+							</div>
+						</div>
+						<div class="menuRight left">
+							<h5>热门品牌</h5>
+							<div class="brands">
+								<table class="brandsTab">
+									<tr>
+										<td><a href="javascript:;"><img src="../img/mz3.jpg"></a></td>
+										<td><a href="javascript:;"><img src="../img/mz1.jpg"></a></td>
+										<td><a href="javascript:;"><img src="../img/mz2.jpg"></a></td>
+									</tr>
+									<tr>
+										<td><a href="javascript:;"><img src="../img/pp1.jpg"></a>
+										</td>
+										<td><a href="javascript:;"><img src="../img/mz3.jpg"></a></td>
+										<td><a href="javascript:;"><img src="../img/pp2.png"></a></td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li>
+					<a href="javascript:;">数码家电<i class="iconfont">&#xe62c;</i></a>
+					<div class="navinner">
+						<div class="menuLeft left">
+							<div class="menu-l-top overHidden">
+								<div class="menu-items left">
+									<h5>生活电器</h5>
+									<a class="red" href="javascript:;">冲调饮品　|</a>
+									<a class="red" href="javascript:;">调味粮油</a>
+								</div>
+								<div class="menu-items left">
+									<h5>3C数码</h5>
+									<a class="red" href="javascript:;">正官庄　|</a>
+									<a href="javascript:;">水杯 　|</a>
+									<a class="red" href="javascript:;">保鲜盒</a>
+									<a href="javascript:;">保温杯　|</a>
+									<a class="red" href="javascript:;">眼罩　|</a>
+									<a href="javascript:;">口罩</a>
+									<a class="red" href="javascript:;">其他</a>
+								</div>
+							</div>
+						</div>
+						<div class="menuRight left">
+							<h5>热门品牌</h5>
+							<div class="brands">
+								<table class="brandsTab">
+									<tr>
+										<td><a href="javascript:;"><img src="../img/mz3.jpg"></a></td>
+										<td><a href="javascript:;"><img src="../img/mz1.jpg"></a></td>
+										<td><a href="javascript:;"><img src="../img/mz2.jpg"></a></td>
+									</tr>
+									<tr>
+										<td><a href="javascript:;"><img src="../img/pp1.jpg"></a>
+										</td>
+										<td><a href="javascript:;"><img src="../img/mz3.jpg"></a></td>
+										<td><a href="javascript:;"><img src="../img/pp2.png"></a></td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li class="lastLi"><a href="javascript:;">韩国直邮</a></li>
+				<span class="line"></span>
+				<div class="fixed_phone"></div>
+				<a href="javascript:;" class="cart"></a>
+			</ul>
+			<div class="services right">
+            <i class="sure" title="正品保证"></i>
+            <i class="speed" title="急速发货"></i>
+            <i class="korea" title="韩国直邮"></i>
+            <i class="pay" title="支付便捷"></i>
+        	</div>
+		</div>
+	</div>
+	<div id="main_detail" class="overHidden minWidth">
+		<div class="wraperCenter">
+			<div class="list_show">
+				<p class="path_bar">
+					<a href="javascript:;">首页</a> > 
+					<a href="javascript:;">美容护肤/美体/精油</a> > 
+					<a href="javascript:;">洁面</a> > 
+					<a>韩国 NATURE REPUBLIC 自然乐园芦荟保湿卸妆洁面乳150ml/瓶</a>
+				</p>
+			</div>
+			<div class="content_dt overHidden">
+				<div class="con_top overHidden">
+					<div id="box" class="left">
+				        <div id="origin">
+				            <div id="move" style="width: 204px;height: 204px;"></div>
+				            <img id="iImg1" src="../img/tt1.jpg" alt="">
+				            <img id="iImg2" src="../img/tt2.jpg" alt="">
+				            <img id="iImg3" src="../img/tt3.jpg" alt="">
+				        </div>
+				        <ul id="unList" class="overHidden">
+				            <li class="hover"><img src="../img/t1.jpg" alt=""></li>
+				            <li><img src="../img/t2.jpg" alt=""></li>
+				            <li><img src="../img/t3.jpg" alt=""></li>
+				        </ul>
+				    </div>
+				    <div id="bigger" style = "width: 408px; height: 408px;">
+				        <img src="../img/tt1.jpg" alt="">
+				        <img src="../img/tt2.jpg" alt="">
+				        <img src="../img/tt3.jpg" alt="">
+				    </div>
+				    <div class="info left">
+				    	<h1><i class="img"><img src="../img/ka.jpg"></i>韩国 NATURE REPUBLIC 自然乐园芦荟保湿卸妆洁面乳150ml/瓶</h1>
+				    	<p class="sub_title">深层清洁，疏通毛孔，含有芦荟精华成分，深入肌肤底处清楚虎沟，令肌肤回复光滑干净。改善暗黄，提亮肤色，含有丰富的天然维生素，消除皮肤色素，抗击氧化，修护细胞，提亮焕白。 </p>
+				    	<div class="info_buy">
+				    		<p class="buy_pr">
+				    			<span>价格</span>
+				    			<i class="now_pr">￥42</i>
+				    			<i class="ori_pr">￥69</i>
+				    		</p>
+				    		<p class="buy_po">
+				    			<span>发货</span>
+				    			<i class="point">香港2仓　预计7个工作日内到货，部分偏远地区除外</i>
+				    		</p>
+				    		<p class="buy_tax">
+				    			<span>税费</span>
+				    			<i class="point">含税价，若配送期间产生税费，请联系客服</i>
+				    		</p>
+				    		<p class="buy_con">
+				    			<span>含量</span>
+				    			<a class="selected" href="javascript:;">150ml</a>
+				    		</p>
+				    		<p class="buy_num">
+				    			<span>数量</span>
+				    			<span class="set_num">
+				    				<a class="desc" href="javascript:;">-</a>
+				    				<input type="text" name="" value="1" class="txt_num" />
+				    				<a class="asc" href="javascript:;">+</a>
+				    			</span> 件
+				    		</p>
+				    		<p class="buy_sm">
+				    			<span>销量</span>
+				    			<i class="sm_num">100</i> 件
+				    		</p>
+				    		<p class="selected_info">
+				    			你已选择　"150ml"
+				    		</p>
+				    		<div class="btn_line">
+				    			<a class="btn_buy" href="javascript:;">立即购买</a>
+				    			<a class="btn_cart" href="javascript:;">加入购物车</a>
+				    		</div>
+				    		<div class="gz"><img src="../img/gz.png"></div>
+				    	</div>
+				    </div>
+				    <div class="view right">
+				    	<a class="title" href="javascript:;">看了又看</a>
+				    	<a href="javascript:;">
+				    		<img src="../img/a1.jpg">
+				    		<span class="img_info">韩国 RE:CIPE 水晶清爽防水防晒喷雾SPF50 150ml/瓶</span>
+				    	</a>
+				    	<p class="viewP">$95</p>
+				    	<a href="javascript:;">
+				    		<img src="../img/a2.jpg">
+				    		<span class="img_info">韩国 nature republic 自然乐园洋甘菊深层卸妆油200ml/瓶</span>
+				    	</a>
+				    	<p class="viewP">$88</p>
+				    	<a href="javascript:;">
+				    		<img src="../img/a3.png">
+				    	</a>
+				    </div>
+				</div>
+				<div class="con_middle overHidden">
+					<div class="msg_info" style="text-align: center;margin-bottom: 15px;">
+						<img src="../img/msg-info.png">
+					</div>
+					<div class="related left">
+                        <div class="tit">相关产品</div>
+	            	    <div class="products">
+		                    <a class="item" href="javascript:;">
+		                        <div class="imgc img"><img class="imge" src="../img/x1.jpg"></div>
+		                        <div class="title">日本 ROHTO 乐敦Hada Labo肌研玻尿酸洗面奶100g/支</div>
+		                        <div class="price">¥82</div>
+		                    </a>
+		                    <a class="item" href="javascript:;">
+		                        <div class="imgc img"><img class="imge" src="../img/x2.jpg"></div>
+		                        <div class="title">韩国 A.H.C 玻尿酸B5保湿补水洁面乳180ml/支</div>
+		                        <div class="price">¥97</div>
+		                    </a>
+		                    <a class="item" href="javascript:;">
+		                        <div class="imgc img"><img class="imge" src="../img/x3.jpg"></div>
+		                        <div class="title">美国 CeraVe 泡沫保湿洁面乳355ml/瓶</div>
+		                        <div class="price">¥108</div>
+		                    </a>
+		                    <a class="item" href="javascript:;">
+		                        <div class="imgc img"><img class="imge" src="../img/x4.jpg"></div>
+		                        <div class="title">韩国 It's skin 伊思晶钻美肌蜗牛洗面奶150ml/支</div>
+		                        <div class="price">¥89</div>
+		                    </a>
+		                    <a class="item" href="javascript:;">
+		                        <div class="imgc img"><img class="imge" src="../img/x5.jpg"></div>
+		                        <div class="title">荷兰 DeTuinen 皇家花园店芦荟洁面液150ml/瓶</div>
+		                        <div class="price">¥112</div>
+		                    </a>
+	            		</div>
+                	</div>
+                	<div class="centre right">
+                		<div class="option">
+                			<a class="curr" href="javascript:;">商品参数</a>
+                			<a href="javascript:;">商品介绍</a>
+                			<a href="javascript:;">用户评价(11)</a>
+                			<a href="javascript:;">用户咨询</a>
+                			<div class="fixed_add right">
+                				<span class="fixed_app">手机下单<img style="width:40px;height: 40px;vertical-align:middle" src="../img/app-small.png"></span>
+                				<span class="fixed_cart">加入购物车</span>
+                			</div>
+                		</div>
+                		<div class="option_con overHidden">
+                			<h2 class="title">商品参数</h2>
+                			<div class="para overHidden" style="margin-top: 15px;">
+                				<div class="pic left"><img src="../img/tt1.jpg"></div>
+                				<ul class="left">
+                					<li>【产地】：韩国</li>
+                					<li>【规格类型】：正常规格</li>
+                					<li>【起泡程度】：泡沫</li>
+                					<li>【洁面分类】：洁面乳</li>
+                				</ul>
+                			</div>
+                		</div>
+                		<div class="option_con">
+                			<h2 class="title">商品介绍</h2>
+                			<div class="show">
+                				<img src="../img/j1.jpg" alt="">
+                				<img src="../img/j2.jpg" alt="">
+                				<img src="../img/j3.jpg" alt="">
+                				<img src="../img/j4.jpg" alt="">
+                				<img src="../img/j5.jpg" alt="">
+                				<img src="../img/j6.jpg" alt="">
+                				<img src="../img/j7.jpg" alt="">
+                				<img src="../img/j8.png" alt="">
+                				<img src="../img/j9.png" alt="">
+                				<img src="../img/j10.png" alt="">
+                				<img src="../img/j11.jpg" alt="">
+                				<img src="../img/j12.jpg" alt="">
+                				<img src="../img/j13.png" alt="">
+                			</div>
+                		</div>
+                		<div class="option_con comment">
+                			<h2 class="title">用户评价</h2>
+                			<ul class="com_ul overHidden">
+                				<li class="com_li active">
+                					<a href="javascript:;">全部评论(11)</a>
+                				</li>
+                				<li class="com_li sw_li">
+                					<a href="javascript:;">好评(11)</a>
+                				</li>
+                				<li class="com_li sw_li">
+                					<a href="javascript:;">中评(0)</a>
+                				</li>
+                				<li class="com_li sw_li">
+                					<a href="javascript:;">差评(0)</a>
+                				</li>
+                				<li class="com_li sw_li">
+                					<a href="javascript:;">有图片的评论(0)</a>
+                				</li>
+                			</ul>
+                			<ul class="com_info show_ul">
+                				<li class="user_com">
+                					<div class="user_msg">
+                						<img src="../img/head.png" alt="">
+                						<span class="user_name"></span>
+                						<span class="user_date"></span>
+                					</div>
+                					<div class="user_show">
+                						<dl class="com_text">
+                							<dd>评论内容：</dd>
+                							<dt></dt>
+                						</dl>
+                					</div>
+                				</li>
+                				<li class="user_com">
+                					<div class="user_msg">
+                						<img src="../img/head.png" alt="">
+                						<span class="user_name"></span>
+                						<span class="user_date"></span>
+                					</div>
+                					<div class="user_show">
+                						<dl class="com_text">
+                							<dd>评论内容：</dd>
+                							<dt></dt>
+                						</dl>
+                					</div>
+                				</li>
+                				<li class="user_com">
+                					<div class="user_msg">
+                						<img src="../img/head.png" alt="">
+                						<span class="user_name"></span>
+                						<span class="user_date"></span>
+                					</div>
+                					<div class="user_show">
+                						<dl class="com_text">
+                							<dd>评论内容：</dd>
+                							<dt></dt>
+                						</dl>
+                					</div>
+                				</li>
+                				<li class="user_com">
+                					<div class="user_msg">
+                						<img src="../img/head.png" alt="">
+                						<span class="user_name"></span>
+                						<span class="user_date"></span>
+                					</div>
+                					<div class="user_show">
+                						<dl class="com_text">
+                							<dd>评论内容：</dd>
+                							<dt></dt>
+                						</dl>
+                					</div>
+                				</li>
+                				<li class="user_com">
+                					<div class="user_msg">
+                						<img src="../img/head.png" alt="">
+                						<span class="user_name"></span>
+                						<span class="user_date"></span>
+                					</div>
+                					<div class="user_show">
+                						<dl class="com_text">
+                							<dd>评论内容：</dd>
+                							<dt></dt>
+                						</dl>
+                					</div>
+                				</li>
+                			</ul>
+                			<ul class="com_info">
+                				<div class="none_com">暂时还没有评论!</div>
+                			</ul>
+                			<ul class="com_info">
+                				<div class="none_com">暂时还没有评论!!!</div>
+                			</ul>
+                			<ul class="com_info">
+                				<div class="none_com">暂时还没有评论!!!!!!</div>
+                			</ul>
+                			<div class="sw_page">
+                				<div class="pc">
+	                				<a href="javascript:;" class="left_btn">&lt;</a>
+	                				<a class="down" href="javascript:;">1</a>
+	                				<a href="javascript:;">2</a>
+	                				<a href="javascript:;">3</a>
+	                				<a href="javascript:;" class="right_btn">&gt;</a>
+                				</div>
+                			</div>
+                		</div>
+                		<div class="option_con">
+                			<h2 class="title">用户咨询</h2>
+                			<ul class="user_consult">
+                				<p class="title">购买前如有问题，请向帮5买会员顾问咨询。</p>
+                				<li>
+	                				<span class="lis_q">帮5买帮海贝是个什么平台？</span>
+	                				<span class="lis_a overHidden">
+	                					<em></em>
+	                					<i>帮5买帮海贝致力打造专业的全球正品海淘平台，专业买手精挑细选，专业跨境物流直送到家。为顾客提供快捷、实惠、放心的海淘体验。品类涵盖：化妆品，母婴、保健、服装，饰品，鞋类，箱包，数码、食品等，帮您淘尽全球好货是我们努力的目标，买全球正品，就来帮5买帮海贝吧。</i>
+	                				</span>
+	                			</li>
+                				<li>
+	                				<span class="lis_q">帮5买帮海贝商品都是正品吗？</span>
+	                				<span class="lis_a overHidden">
+		                				<em></em>
+		                					<i>帮5买帮海贝上所售卖的商品均确保正品，支持假一罚十，帮5买在韩国有分公司进行直接采购和品质把控，所选择的产品都来自品牌方或正规授权渠道方，确保100%正品和低价。</i>
+	                				</span>
+                				</li>
+                				<li>
+	                				<span class="lis_q">帮5买帮海贝的发货速度怎么样？</span>
+	                				<span class="lis_a overHidden">
+	                				<em></em>
+	                					<i>帮5买帮海贝目前有保税仓发货和海外直邮等发货方式。<br>
+	                				1）国内保税仓货物客户下单经过海关查验后直接国内快递发货，基本保证2-7天到货。<br>2）海外直邮采取空运直邮，预计1-2周内到货。</i></span>
+                				</li>
+                				<li>
+	                				<span class="lis_q">既然是海外商品，退货会不会很麻烦？</span>
+	                				<span class="lis_a overHidden">
+	                				<em></em>
+	                					<i>亲，对于所有商品，质量问题都是支持7天退货的，并且我们会补偿运费。</i></span>
+                				</li>
+                				<li>
+	                				<span class="lis_q">退货后钱款多久可以到账？</span>
+	                				<span class="lis_a overHidden">
+	                				<em></em>
+	                					<i>亲，退款时间银联7-10个工作日，微信支付3-5个工作日，财付通3-5个工作日。</i></span>
+                				</li>
+                				<li>
+	                				<span class="lis_q">保税仓或直邮商品下单后可以取消或更改地址吗？</span>
+	                				<span class="lis_a overHidden">
+	                				<em></em>
+	                					<i>保税仓商品由海关监管，下单后即视为商品清关，清关商品无法重新退回海外，故不可取消或更改地址，请谅解。</i></span>
+                				</li>
+                				<li>
+	                				<span class="lis_q">为什么在帮海贝购物需要输入真实姓名和身份证号？</span>
+	                				<span class="lis_a overHidden">
+	                				<em></em>
+	                					<i>根据海关要求，购买海淘和保税仓商品时需要提交实名身份证信息，否则商品将无法通过海关检查。帮海贝承诺收货人身份证信息仅用于清关检查。</i></span>
+                				</li>
+                				<li>
+	                				<span class="lis_q">在帮海贝购买的商品，是否提供发票？</span>
+	                				<span class="lis_a overHidden">
+	                				<em></em>
+	                					<i>帮海贝所售跨境海外商品，无法开据国内发票，请您谅解。</i></span>
+                				</li>
+                			</ul>
+                			<div class="notice"></div>
+                		</div>
+                	</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="footer">
+		<div class="wraperCenter">
+			<p class="footer_link">
+				<a href="javascript:;">帮5采</a>　|　
+				<a href="javascript:;">帮海贝</a>　|　
+				<a href="javascript:;">移动应用</a>　|　
+				<a href="javascript:;">广告联盟</a>　
+				<a href="javascript:;">使用条款</a>
+			</p>
+			<p class="footer_copy">Copyright © 2011-2016　上海载和网络科技有限公司. 　All rights reserved. Powered by 上海载和网络科技有限公司</p>
+			<p class="footer_pub">
+				<a href="javascript:;"><img src="../img/p1.gif"></a>
+				<a href="javascript:;"><img src="../img/p2.png"></a>
+				<a href="javascript:;"><img src="../img/p3.gif"></a>
+				<a href="javascript:;"><img src="../img/p1.gif"></a>
+				<a href="javascript:;"><img src="../img/p2.png"></a>
+				<a href="javascript:;"><img src="../img/p3.gif"></a>
+			</p>
+		</div>
+	</div>
+	<div id="rightBar">
+		<ul class="bar_list">
+			<li class="bar_items">
+				<i class="iconfont">&#xe69f;</i>
+				<span class="consult">小帮帮咨询</span>
+			</li>
+			<li class="bar_items">
+				<i class="iconfont">&#x3488;</i>
+				<span class="weChat"><img src="../img/weixin.png"></span>
+			</li>
+			<li class="bar_items cart">
+				<i class="iconfont">&#xe64a;</i>
+				<span class="cart">购物车</span>
+			</li>
+			<li class="bar_items">
+				<i class="iconfont">&#xe635;</i>
+				<span class="collect">我的收藏</span>
+			</li>
+			<li class="bar_items">
+				<i class="iconfont">&#xe630;</i>
+				<span class="APP"><img src="../img/app.png"></span>
+			</li>
+			<li class="bar_items backTop">
+				TOP
+				<span class="Top">返回顶部</span>
+			</li>
+		</ul>
+	</div>
+	
+</body>
+</html>

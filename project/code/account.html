@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>结算页面</title>
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <link rel="shortcut icon" href="http://ucenter.b5m.com/favicon.ico?_=" type="image/x-ion">
+    <script type="text/javascript" src="../js/jQuery.js"></script>
+    <script type="text/javascript" src="../js/jquery.cookie.js"></script>
+    <script src="../js/area.js" type="text/javascript"></script>
+    <script src="../js/account.js" type="text/javascript"></script>
+</head>
+<body>
+    <div id="account">
+        <div class="cart_logo">
+            <a class="home_logo" href="javascript:;"><img src="../img/cartlogo.png"></a>
+            <a class="phone_logo" href="javascript:;"><img src="../img/plogo.png"></a>
+            <div class="icons right">
+                <a class="icon1" href="">全网帮购</a>
+                <a class="icon2" href="">优质服务</a>
+                <a class="icon3" href="">闪电退款</a>
+            </div>
+        </div>
+        <div class="cart_title overHidden">
+            <h3 class="left">
+                订单确认页面
+            </h3>
+            <div class="process right">
+                <span>我的购物车</span>
+                <span>确认订单信息</span>
+                <span class="last_span">成功提交订单</span>
+            </div>
+        </div>
+        <div class="order_content">
+            <div class="address">
+                <span class="add_title">1&nbsp;地址选择</span>
+                <div class="add_edit">
+                    <div class="edit_tips">温馨提示：根据海关要求，为了确保跨境商品正常通关。请填写收件人真实姓名和身份证信息，收货人和支付人信息请保持一致！</div>
+                    <ul style="margin-top: 20px;">
+                        <li>
+                            <span><i>*</i>&nbsp;收货人姓名：</span>
+                            <input type="text" class="txt" id="userName" name="userName">
+                            <font>&nbsp;<em class="icon"></em>请输英文或中文姓名，必须大于2个字符，小于18个字符！</font>
+                        </li>
+                        <li>
+                            <span><i>*</i>&nbsp;身份证号码：</span>
+                            <input type="text" class="txt" id="idCard" name="idCard">
+                            <font>&nbsp;<em class="icon"></em>请填写正确的身份证号码！</font>
+                        </li>
+                        <li>
+                            <span><i>*</i>&nbsp;收货地址：</span>
+                            <select id="s_province" name="s_province"></select>  
+                            <select id="s_city" name="s_city" ></select>  
+                            <select id="s_county" name="s_county"></select>
+                        </li>
+                        <li>
+                            <span><i>*</i>&nbsp;详细地址：</span>
+                            <textarea style="outline: none" name="detailAddress" id="detailAddress" class="txt txt1"></textarea>
+                            <font>&nbsp;<em class="icon"></em>5到120个字符之间</font>
+                        </li>
+                        <li>
+                            <span><i>*</i>手机号码：</span>
+                            <input type="text" class="txt" id="adMobile" name="mobile">
+                            <font>&nbsp;<em class="icon"></em>请输入正确的11位手机号码！</font>
+                        </li>
+                        <li>
+                            <div class="set_check">
+                                <label for="set-default"><input type="checkbox" class="check" id="set-default" style="margin-right: 6px;">设为默认地址</label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="adr_btn">
+                                <a href="javascript:void(0)" class="btn_sure">确定</a>
+                                <a href="javascript:void(0)" class="btn_cancel">取消</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="informate">
+                <span class="inform_tit cfx">2&nbsp;商品清单：
+                    <a class="edit_cart" href="javascript:;">返回修改购物车&gt;&gt;</a>
+                </span>
+                <div class="goods_box">
+                    <div class="order_thead">
+                        <span class="name">商品名称</span>
+                        <span class="postage">商品规格</span>
+                        <span class="price">价格（元）</span>
+                        <span class="quantity">数量</span>
+                    </div>
+                    <div class="order_con">
+                        <div class="con_info">
+                            <span class="name">
+                                <img src="../img/aa1.jpg" alt="">
+                                <a href="javascript:;">德国 Frosch 菲洛施厨房重油污苏打清洁剂500ml/瓶</a>
+                            </span>
+                            <span class="postage">净含量:500ml;香味:其他</span>
+                            <span class="price">46.00</span>
+                            <span class="quantity">5</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="account_box overHidden">
+            <ul>
+                <li class="cfx">
+                    <span class="ac_title">商品合计：</span>
+                    <span class="ac_num">¥230</span>
+                </li>
+                <li class="cfx">
+                    <span class="ac_title">运费合计：</span>
+                    <span class="ac_num">0</span>
+                </li>
+                <li class="ac_sum">
+                    <span class="ac-title">订单总额：</span>
+                    <span class="ac_num">¥230.00</span>
+                </li>
+                <li class="ac_btn">
+                    <a href="javascript:;">提交订单</a>
+                </li>
+            </ul>
+        </div>
+        <div id="footer">
+            <p class="footer_link">
+                <a href="javascript:;">帮5采</a>　|　
+                <a href="javascript:;">帮海贝</a>　|　
+                <a href="javascript:;">移动应用</a>　|　
+                <a href="javascript:;">广告联盟</a>　
+                <a href="javascript:;">使用条款</a>
+            </p>
+            <p class="footer_copy">Copyright © 2011-2016　上海载和网络科技有限公司. 　All rights reserved. Powered by 上海载和网络科技有限公司</p>
+            <p class="footer_pub">
+                <a href="javascript:;"><img src="../img/p1.gif"></a>
+                <a href="javascript:;"><img src="../img/p2.png"></a>
+                <a href="javascript:;"><img src="../img/p3.gif"></a>
+                <a href="javascript:;"><img src="../img/p1.gif"></a>
+                <a href="javascript:;"><img src="../img/p2.png"></a>
+                <a href="javascript:;"><img src="../img/p3.gif"></a>
+            </p>
+        </div>
+    </div>
+    <script type="text/javascript">_init_area();</script>
+</body>
+</html>

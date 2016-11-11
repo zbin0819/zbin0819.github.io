@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>购物车页面</title>
+	<link rel="stylesheet" type="text/css" href="../css/common.css">
+	<link rel="stylesheet" type="text/css" href="../css/index.css">
+	
+	<link rel="shortcut icon" href="http://ucenter.b5m.com/favicon.ico?_=" type="image/x-ion">
+	<script type="text/javascript" src="../js/jQuery.js"></script>
+	<script type="text/javascript" src="../js/cart.js"></script>
+	<script type="text/javascript" src="../js/jquery.cookie.js"></script>
+</head>
+<body>
+	<div id="topBar" class="minWidth">
+		<div class="wraperCenter">
+			<div class="b5m_logo left">
+				<a href="D:/WWW/project/code/index.html">
+					<img src="../img/slogen.png" style="vertical-align: middle">
+					帮海贝，畅享全球品质生活！
+				</a>
+			</div>
+			<div class="align right">
+				<a class="qq" href="javascript:;"></a>
+				<a class="wx" href="javascript:;"></a>
+				<a class="wb" href="javascript:;"></a>
+				<a href="javascript:;">登录</a>
+				<a href="javascript:;">注册</a>
+				<a class="news" href="javascript:;">
+					消息
+					<div class="message overHidden">
+						<h3>我的消息</h3>
+						<img src="../img/a.png" style="padding: 20px 0">
+						<p>暂时还没有您的消息</p>
+						<div class="check">查看全部</div>
+					</div>
+				</a>
+				<a class="phone" href="javascript:;">
+					手机版
+					<div class="ewm overHidden"></div>
+				</a>
+				<a href="javascript:;">我的订单</a>
+				<a href="javascript:;">我的收藏</a>
+				<a href="javascript:;">帮助中心</a>
+			</div>
+		</div>
+	</div>
+	<div id="cart">
+		<div class="wraperCenter">
+			<div class="cart_logo">
+				<a class="home_logo" href="javascript:;"><img src="../img/cartlogo.png"></a>
+				<a class="phone_logo" href="javascript:;"><img src="../img/plogo.png"></a>
+				<div class="icons right">
+					<a class="icon1" href="">全网帮购</a>
+					<a class="icon2" href="">优质服务</a>
+					<a class="icon3" href="">闪电退款</a>
+				</div>
+			</div>
+			<div class="cart_title overHidden">
+				<h3 class="left">
+					我的购物车
+					<span class="sure">为了保证商品信息的时效性，超过3天的商品会失效</span>
+				</h3>
+				<div class="process right">
+					<span>我的购物车</span>
+					<span>确认订单信息</span>
+					<span class="last_span">成功提交订单</span>
+				</div>
+			</div>
+			<div class="cart_thead">
+				<a href="javascript:;"><input type="checkbox" name="check" class="all_select cart_cb"></a>
+				<span class="all">全选</span>
+				<span class="name">商品名称</span>
+				<span class="pos">商品规格</span>
+				<span class="price">单价（元）</span>
+				<span class="qua">数量</span>
+				<span class="amount">小计（元）</span>
+				<span class="opt">操作</span>
+			</div>
+			<div class="cart_main">
+				<div class="title_bar">
+					<i class="hot">热销</i>
+					<span>为您推荐的最热销商品</span>
+					<a href="javascript:;">展开</a>
+				</div>
+				<div class="goods_list">
+					<ul class="overHidden">
+						<li class="left"><a href="javascript:;" class="goods_box">
+								<img src="../img/c1.jpg" alt="">
+								<div class="goods_info">
+									<h4>韩国 Holika Holika 蜂蜜睡眠面膜90ml/瓶</h4>
+									<strong class="price">63</strong>
+									<span class="org_price">￥98</span>
+									<em class="add_cart" data-id="1">加入购物车</em>
+								</div>
+							</a></li>
+						<li class="left"><a href="javascript:;" class="goods_box">
+								<img src="../img/c2.jpg" alt="">
+								<div class="goods_info">
+									<h4>韩国 Etude House 爱丽小屋染色眉毛打底膏4.5g/支</h4>
+									<strong class="price">75</strong>
+									<span class="org_price">￥98</span>
+									<em class="add_cart" data-id="2">加入购物车</em>
+								</div>
+							</a></li>
+						<li class="left"><a href="javascript:;" class="goods_box">
+								<img src="../img/c3.jpg" alt="">
+								<div class="goods_info">
+									<h4>韩国 It's skin 伊思红参蜗牛面膜5片/盒</h4>
+									<strong class="price">88</strong>
+									<span class="org_price">￥98</span>
+									<em class="add_cart" data-id="3">加入购物车</em>
+								</div>
+							</a></li>
+						<li class="left"><a href="javascript:;" class="goods_box">
+								<img src="../img/c4.jpg" alt="">
+								<div class="goods_info">
+									<h4>韩国 Sulwhasoo 雪花秀 焕颜白参磨砂面膜80ml/盒</h4>
+									<strong class="price">99</strong>
+									<span class="org_price">￥98</span>
+									<em class="add_cart" data-id="4">加入购物车</em>
+								</div>
+							</a></li>
+					</ul>
+				</div>
+				<div class="cart_info">
+					<h5>
+						帮海贝，畅享全球品质生活！
+					</h5>
+					<div class="list_wrap">
+						<ul class="info_list overHidden">
+							<!--<li class="cart_check">
+								<input type="checkbox" name="">
+							</li>
+							<li class="cart_pic">
+								<img src="../img/cart1.jpg">
+							</li>
+							<li class="cart_name">
+								<a href="javascript:;">美国 Smiths Rosebud Salve 玫瑰花蕾膏22g/罐</a>
+							</li>
+							<li class="cart_pos">
+								化妆品净含量:22g;颜色分类:草莓花蕾膏
+							</li>
+							<li class="cart_price">
+								39.00
+							</li>
+							<li class="cart_qua">
+								<span class="subtract">-</span>
+								<input class="goods_num" type="text" value="1" name="">
+								<span class="plus">+</span>
+							</li>
+							<li class="cart_amount">
+								<span>39.00</span>
+							</li>
+							<li class="cart_det">
+								<a href="javascript:;">删除</a>
+							</li>-->
+						</ul>
+					</div>
+					<h4 style="text-align: center">亲！购物车里还没有商品(点击展开加入商品)。</h4>
+				</div>
+			</div>
+			<div class="cart_select">
+				<a href="javascript:;"><input type="checkbox" name="check" class="all_select cart_cb"></a>
+				<span class="all">全选</span>
+			</div>
+			<div class="cart_foot">
+				<div class="goods_amount">
+					已选 <span class="total_num">0</span> 件商品
+				</div>
+				<div class="total_pay">
+					商品总额：￥<span class="total_money">0</span>
+				</div>
+				<a href="javascript:;">结算</a>
+			</div>
+		</div>
+	</div>
+	<div id="footer">
+		<div class="wraperCenter">
+			<p class="footer_link">
+				<a href="javascript:;">帮5采</a>　|　
+				<a href="javascript:;">帮海贝</a>　|　
+				<a href="javascript:;">移动应用</a>　|　
+				<a href="javascript:;">广告联盟</a>　
+				<a href="javascript:;">使用条款</a>
+			</p>
+			<p class="footer_copy">Copyright © 2011-2016　上海载和网络科技有限公司. 　All rights reserved. Powered by 上海载和网络科技有限公司</p>
+			<p class="footer_pub">
+				<a href="javascript:;"><img src="../img/p1.gif"></a>
+				<a href="javascript:;"><img src="../img/p2.png"></a>
+				<a href="javascript:;"><img src="../img/p3.gif"></a>
+				<a href="javascript:;"><img src="../img/p1.gif"></a>
+				<a href="javascript:;"><img src="../img/p2.png"></a>
+				<a href="javascript:;"><img src="../img/p3.gif"></a>
+			</p>
+		</div>
+	</div>
+</body>
+</html>
