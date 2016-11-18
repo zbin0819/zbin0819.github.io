@@ -1,0 +1,108 @@
+<div class="classify-wrap" ng-controller="classifyCtrl">
+	<div class="classify-nav">
+		<div class="classify-con">
+			<strong class="classifyActive">分类</strong>
+		</div>
+		<div class="classify-brands">
+			<strong>品牌</strong>
+		</div>
+	</div>
+	<div class="classify-con">
+		<div class="classify-bar">
+			<ul>
+				<li class="bar-active"></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+		<div class="classify-det">
+			<ul class="ul-1">
+				<li>
+					<div class="cl-img"><img src=""></div>
+					<div class="cl-text">
+						<span></span>
+					</div>
+				</li>
+			</ul>
+			<ul class="ul-2">
+				<li>
+					<div class="cl-img"><img src=""></div>
+					<div class="cl-text">
+						<span></span>
+					</div>
+				</li>
+			</ul>
+			<ul class="ul-3">
+				<li>
+					<div class="cl-img"><img src=""></div>
+					<div class="cl-text">
+						<span></span>
+					</div>
+				</li>
+			</ul>
+			<ul class="ul-4">
+				<li>
+					<div class="cl-img"><img src=""></div>
+					<div class="cl-text">
+						<span></span>
+					</div>
+				</li>
+			</ul>
+			<ul class="ul-5">
+				<li>
+					<div class="cl-img"><img src=""></div>
+					<div class="cl-text">
+						<span></span>
+					</div>
+				</li>
+			</ul>
+			<ul class="ul-6">
+				<li>
+					<div class="cl-img"><img src=""></div>
+					<div class="cl-text">
+						<span></span>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	var switchBar = $('.classify-nav strong'),
+		classifyBarLi = $('.classify-bar li'),
+		detailUl = $('.classify-det ul'),
+		detailUlImg = $('.classify-det ul .cl-img img'),
+		detailUlText = $('.classify-det ul .cl-text span');
+	switchBar.click(function(){
+		switchBar.removeClass('classifyActive');
+		$(this).addClass('classifyActive');
+	});
+	//接口数据
+	$.ajax({
+		type:'GET',
+		url:'http://k.b5m.com/api/goods-display?authCode=172ca9138968b5f3dd28a3d944f51caa&code=index_menu_main&',
+		dataType:'JSONP',
+		jsonp:'jsonCallback',
+		success:function(data){
+			// console.log(data);
+			data.val.categoryList.forEach(function(v,k){
+				classifyBarLi.eq(k).html(v.displayName);//bar数据
+				// console.log(v.subCategoryList[0].subCategoryList,k);
+				detailUlImg.eq(k).attr({src:v.subCategoryList[0].icon});
+			});
+
+		}
+	});
+	classifyBarLi.click(function(){
+		var iIndex = $(this).index();
+		classifyBarLi.removeClass('bar-active');
+		classifyBarLi.eq(iIndex).addClass('bar-active');
+		detailUl.fadeOut(300);
+		detailUl.eq(iIndex).fadeIn(300);
+	});
+</script>
+

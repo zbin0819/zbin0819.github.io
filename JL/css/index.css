@@ -12,7 +12,7 @@ html,body{
 	overflow: hidden;
 	max-width: 1024px;
 	min-width: 320px;
-	background: #ccc;
+	background: #f0f0f0;
 }
 li{
 	list-style: none;
@@ -202,7 +202,7 @@ img{
 }
 .second-slide .introduce{
 	width: 100%;
-	height: 1.55rem;
+	height: 1.42rem;
 	color: #fff;
 	text-align: center;
 	line-height: 1.55rem;
@@ -290,14 +290,14 @@ img{
 }
 .third-slide .skill-wrap{
 	width: 80%;
-	height: 5rem;
+	height: 4.6rem;
 	margin:.2rem auto 0;
 	background:url(../img/c1.png) no-repeat;
 	background-size: cover;
 }
 .third-slide .skill-wrap .skill-title{
 	width: 100%;
-	height: 16%;
+	height: 10%;
 	text-align: center;
 	line-height: .64rem;
 	color: #FFF;
@@ -311,7 +311,7 @@ img{
 }
 .third-slide .skill-wrap ul li{
 	width: 100%;
-	height: 16%;
+	height: 15%;
 	line-height: .68rem;
 	border-bottom: 1px solid  #ccc;
 	color: #FFF;
@@ -347,7 +347,7 @@ img{
 		left: 66%;
 	}
 }
-.fouth-slide .project-show{
+.fouth-slide .project-show,.fifth-slide .experience-title,.fouth-slide .project-show,.sixth-slide .contact-title{
 	width: 100%;
 	height: 16%;
 	text-align: center;
@@ -365,4 +365,59 @@ img{
 }
 .fouth-slide .nest-wrap .swiper-slide{
 	background: #f0f0f0;
+}
+.fouth-slide .nest-wrap .swiper-container-horizontal>.swiper-pagination-bullets{
+	bottom: 4px;
+}
+.fifth-slide .experience-show{
+	width: 100%;
+	height:70%;
+	margin-top:20px;
+	display: flex;
+	flex-wrap: nowrap;
+}
+.fifth-slide .experience-show .show-div{
+	width: 80%;
+	height: 80%;
+	margin:0 auto;
+	color: #FFF;
+}
+.fifth-slide .experience-show .show-div p{
+	height: 30%;
+	padding: 10px 8px;
+	font-size: .18rem;
+}
+.fifth-slide .experience-show .swiper-slide{
+	padding:10px 8px;
+	background: rgba(0,0,0,.5);
+}
+.fifth-slide .experience-show .show-pic{
+	width: 2.6rem;
+	height: 2rem;
+	position: absolute;
+	right: 0;
+	bottom: -18px;
+	
+}
+.sixth-slide .contact-wrap{
+	width: 100%;
+	height: 80%;
+	margin-top: 10px;
+}
+.sixth-slide .contact-wrap .ew-img{
+	width: 50%;
+	height: 40%;
+	margin:0 auto;
+}
+.sixth-slide .contact-wrap .text{
+	font-size: .2rem;
+	color: #FFF;
+	text-align: center;
+	padding: 10px 0;
+}
+.sixth-slide .contact-wrap .qq-text,.sixth-slide .contact-wrap .phone{
+	padding: 10px 0; 
+	text-align: center;
+	font-size: .2rem;
+	color: #FFF;
 }

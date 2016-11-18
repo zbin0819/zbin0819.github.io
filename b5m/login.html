@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>用户登录</title>
+	<link rel="stylesheet" type="text/css" href="dist/css/bootstrap.min.css"/>
+	<link rel="stylesheet" type="text/css" href="dist/css/bootstrap-theme.min.css"/>
+	<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+	<style type="text/css">
+		.row{
+			border-bottom: 1px solid #CCC;
+		}	
+		.login-title h4{
+			font-weight: bold;
+			text-align: center;
+		}
+		img{
+			width: 100%;
+			height: 100%;
+		}
+		.input-group-lg>.input-group-addon{
+			padding: 10px 8px;
+		}
+		.form-group .btn{
+			width: 100%;
+			height: 100%;
+			background: #ED145B;
+			border: none;
+			outline: none;
+			color: #FFF;
+			padding: 10px 12px;
+		}
+		.register .btn{
+			background: #F85B90;
+			margin-top: 10px;
+		}
+		.warning-wrap{
+			border-bottom: none;
+			text-align: center;
+			color: red;
+			font-size: 18px;
+			padding-top: 16px;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-1"></div>
+			<div class="col-xs-10 login-title"><h4>用户登录</h4></div>
+			<div class="col-xs-1"></div>
+		</div>
+		<div class="row">
+			<img src="img/l1.png">
+		</div>
+		<div class="row warning-wrap"></div>
+		<div class="panel-body">
+			<form class="form-horizontal" role="form">
+				<div class="form-group">
+					<div class="col-sm-10">
+						<div class="input-group input-group-lg">
+							<span class="input-group-addon">用户名</span>
+							<input type="text" class="form-control username" placeholder="请输入手机号/邮箱">
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-10">
+						<div class="input-group input-group-lg">
+							<span class="input-group-addon">密码</span>
+							<input type="password" class="form-control password" placeholder="请输入密码"/>
+						</div>
+
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+				      <div class="checkbox">
+				        <label>
+				          <input type="checkbox"> 记住密码
+				        </label>
+				      </div>
+				    </div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+						<button type="button" class="btn">登录</button>
+					</div>
+					<div class="col-sm-offset-2 col-sm-10 register">
+						<a href="register.html"><button type="button" class="btn">注册</button></a>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		var userName = $('.username'),
+			passWord = $('.password'),
+			loginBtn = $('.btn'),
+			wraningWrap = $('.warning-wrap');
+
+		loginBtn.click(function(){
+			// console.log(userName.val())
+			if(!userName.val() || !passWord.val()){
+				wraningWrap.fadeIn(function(){
+					setTimeout(function(){
+						wraningWrap.fadeOut();
+					},3000)
+				});
+				wraningWrap.html('请填写登录信息');
+			}else{
+				console.log('数据正在加载中...');
+				wraningWrap.fadeIn(function(){
+					setTimeout(function(){
+						wraningWrap.fadeOut();
+					},3000)
+				});
+				wraningWrap.html('正在验证登录信息、请稍等...');
+				$.ajax({
+					type:'GET',
+					url:'http://datainfo.duapp.com/shopdata/userinfo.php',
+					data:{
+						'status':'login',
+						userID:userName.val(),
+						password:passWord.val()
+					},
+					success:function(data){
+						console.log('数据校验成功');
+						if(data == 0){
+							console.log('用户不存在，请注册');
+							wraningWrap.fadeIn(function(){
+								setTimeout(function(){
+									wraningWrap.fadeOut();
+								},3000)
+							});
+							wraningWrap.html('用户不存在，请注册');
+						}else if(data == 2){
+							console.log('用户名或密码错误');
+							wraningWrap.fadeIn(function(){
+								setTimeout(function(){
+									wraningWrap.fadeOut();
+								},3000)
+							});
+							wraningWrap.html('用户名或密码错误');
+						}else{
+							console.log('登录成功');
+							wraningWrap.fadeIn(function(){
+								setTimeout(function(){
+									wraningWrap.fadeOut();
+									window.location.href = "index.html";
+								},2000)
+							});
+							wraningWrap.html('登录成功');
+							//本地数据库判断是否登录
+							if(window.localStorage){
+								localStorage.setItem('username',userName.val())
+								localStorage.setItem('dataFlag',true);
+							}
+						}
+					},
+					error:function(){
+						alert("数据请求失败");
+					}
+				})
+			}
+			
+		});
+	</script>
+</body>
+</html>

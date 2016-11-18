@@ -1,0 +1,90 @@
+<div class="my-wrap">
+	<div class="login-wrap">
+		<div class="login-btn" >
+			<a href="login.html">登录 / 注册</a>
+		</div>
+		<div class="login-suc">
+			欢迎您，亲爱的17839938648
+		</div>
+	</div>
+	<div class="order-main">
+		<div class="order-top">
+			查看我的全部订单
+		</div>
+		<div class="order-itmes">
+			<ul>
+				<li>
+					<span class="icon"><img src="img/m1.png"></span>
+					<span class="text">待付款</span>
+				</li>
+				<li>
+					<span class="icon"><img src="img/m2.png"></span>
+					<span class="text">待发货</span>
+				</li>
+				<li>
+					<span class="icon"><img src="img/m3.png"></span>
+					<span class="text">待收货</span>
+				</li>
+				<li>
+					<span class="icon"><img src="img/m4.png"></span>
+					<span class="text">待评价</span>
+				</li>
+			</ul>
+		</div>
+	</div>	
+	<div class="menu-list">
+		<ul class="list"></ul>
+	</div>
+	<div class="my-footer">
+		客服电话：
+		<span class="phone">400-820-0539</span>
+	</div>
+	<div class="quit-login">退出登录</div>
+</div>
+
+<script type="text/javascript">
+	var menuList = $('.menu-list .list'),
+	    sUlHtml = '';
+
+	$.ajax({
+		type:'GET',
+		url:'http://bhb.b5m.com/api/ucenter?action=getUserPageData',
+		dataType:'JSONP',
+		jsonp:'jsonpCallback',
+		success:function(data){
+			data.data.nav.forEach(function(v,k){
+				sUlHtml += `<li><a href="`+ v.url +`"><img src="`+ v.img +`"><span>`+ v.title +`</span></a></li>`
+			});
+			menuList.html(sUlHtml);
+		}
+	})
+
+	if(window.localStorage){
+		var userName = localStorage.getItem('username'),
+			dataFlag = localStorage.getItem('dataFlag'),
+			loginBtn = $('.login-btn'),
+			loginSuc = $('.login-suc'),
+			quitBtn = $('.quit-login');
+
+		/*console.log(userName);
+		console.log(dataFlag);*/
+		if(dataFlag == 'true'){
+			loginSuc.css({display:'block'});
+			loginBtn.css({display:'none'});
+			quitBtn.css({display:'block'});
+			loginSuc.html('欢迎您，亲爱的' + userName);
+		}
+
+		quitBtn.click(function(){
+			localStorage.setItem('username','');
+			localStorage.setItem('dataFlag',false);
+			window.location.href = 'login.html';
+			setTimeout(function(){
+				loginSuc.css({display:'none'});
+				loginBtn.css({display:'block'});
+				quitBtn.css({display:'none'});
+			},1000)
+		});
+
+	}
+</script>

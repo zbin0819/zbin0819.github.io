@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+	<title>帮5买</title>
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+	<script type="text/javascript" src="js/jQuery.js" ></script>
+	<script type="text/javascript" src="js/iscroll.js" ></script>
+	<script type="text/javascript" src="js/iscroll-probe.js" ></script>
+	<script type="text/javascript" src="js/swiper.min.js" ></script>
+	<script type="text/javascript" src="js/angular.js" ></script>
+	<script type="text/javascript" src="js/angular-route.js" ></script>
+	<script type="text/javascript" src="js/index.js" ></script> 
+</head>
+<body ng-controller="mainCtrl">
+	<div id="wrapper">
+		<header id="header">
+			<div class="search">
+				<div class="logo"></div>
+				<div class="search-con" ng-hide="homepageFlag"><input type="text" placeholder="你要的，就在这里~"><em class="search-img"><img src="img/search.png" alt=""></em></div>
+				<div class="cart-top" ng-hide="cartpageFlag">购物车</div>
+				<div class="my-top" ng-hide="mypageFlag">用户中心</div>
+				<div class="bar-btn"></div>
+			</div>
+			<div class="top-bar">
+				<ul>
+					<li ng-click="changeHtml('search')"><a href="#/index">首页</a></li>
+					<li ng-click="changeHtml('search')"><a href="#/classify">分类</a></li>
+					<li ng-click="changeHtml('cart')"><a href="#/cart">购物车</a></li>
+					<li ng-click="changeHtml('my')"><a href="#/my">我的</a></li>
+				</ul>
+			</div>
+		</header>
+		<section ng-view></section>
+	</div>
+	<script type="text/javascript">
+		var myApp = angular.module('myApp',['ngRoute']);
+		myApp.config(['$routeProvider',function($routeProvider){
+			$routeProvider
+			.when('/index',{
+				templateUrl:'index1.html',
+				controller:'mainCtrl'
+			})
+			.when('/classify',{
+				templateUrl:'classify.html',
+				controller:'classifyCtrl'
+			})
+			.when('/cart',{
+				templateUrl:'cart.html',
+				controller:'cartCtrl'
+			})
+			.when('/my',{
+				templateUrl:'my.html',
+				controller:'myCtrl'
+			})
+			.otherwise({
+				//重定向到url上只是url里面字符串改变
+	    		redirectTo:'/index'
+			})
+		}]);
+		myApp.controller('mainCtrl',['$scope','$location',"$window",'$timeout',function($scope,$location,$window,$timeout){
+			$scope.pageInfo = {  //动态改变头部内容
+				'search':{
+					'homepageFlag':false,
+					'cartpageFlag':true,
+					'mypageFlag':true,
+				},
+				'cart':{
+					'homepageFlag':true,
+					'cartpageFlag':false,
+					'mypageFlag':true,
+				},
+				'my':{
+					'homepageFlag':true,
+					'cartpageFlag':true,
+					'mypageFlag':false,
+				}
+			}
+			$scope.homepageFlag = false;
+			$scope.cartpageFlag = true;
+			$scope.mypageFlag = true;
+			$scope.changeHtml = function(arg){
+				$scope.homepageFlag = $scope.pageInfo[arg].homepageFlag;
+				$scope.cartpageFlag = $scope.pageInfo[arg].cartpageFlag;
+				$scope.mypageFlag = $scope.pageInfo[arg].mypageFlag;
+			}
+	    }]);
+	    /*myApp.directive('searchCon',function(){
+	    	return{
+	    		restrict : "E",
+	    		template:'<div class="search-con"><input type="text" placeholder="你要的，就在这里~"><em class="search-img"><img src="img/search.png" alt=""></em></div>',
+	    		replace:true
+	    	};
+	    });*/
+	    myApp.controller('classifyCtrl',['$scope',function($scope){
+		}])
+		myApp.controller('cartCtrl',['$scope',function($scope){
+		}])
+		myApp.controller('myCtrl',['$scope',function($scope){
+		}])
+	</script>
+</body>
+</html>

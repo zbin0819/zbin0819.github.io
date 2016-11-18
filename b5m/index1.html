@@ -1,0 +1,226 @@
+<div class="main-wrap" id="main-wrap">
+	<div class="scroll-wrap">
+		<div class="swiper-container banner-wrap">
+		    <div class="swiper-wrapper banner"></div>
+		    <!-- 如果需要分页器 -->
+	    	<div class="swiper-pagination banner-page"></div>
+		</div>
+		<nav>
+			<ul></ul>
+		</nav>
+		<div class="activity-banner"><img src=""></div>
+		<div class="topic-wrap"><!-- 这部分接口删除了  -->
+			<div class="title">
+				<em class="title-icon first-title"></em>今日活动
+			</div>
+			<div class="topic-content">
+				<div class="lc"><img src=""></div>
+				<div class="rc"></div>
+			</div>
+		</div>
+		<div class="special-wrap">
+			<div class="title">
+				<em class="title-icon second-title"></em>今日专场
+			</div>
+			<div class="special-con">
+				<ul>
+					<li><img src=""></li>
+				</ul>
+			</div>
+		</div>
+		<div class="rank-wrap">
+			<div class="title">
+				<em class="title-icon third-title"></em>热卖排行
+			</div>
+			<div class="rank-con">
+				<ul>
+					<li>
+						<div class="img-wrap"></div>
+						<div class="info-wrap">
+							<div class="title-info"><img src=""></div>
+						    <div class="price-info">
+						    	<strong class="now-pr"></strong>
+						    	<strong class="ori-pr"></strong>
+						    	<em class="reduce"></em>
+						    </div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="newgoods">
+			<div class="title">
+				<em class="title-icon fourth-title"></em>新品上架
+			</div>
+			<ul class="newgoods-wrap"></ul>
+			<div class="pull-up">亲！上拉加载新的商品</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	//banner
+	/*setTimeout(function(){ //这里加延时容易出bug
+		var mySwiper = new Swiper ('.swiper-container', {
+	//	    direction: 'vertical',
+		    loop: true,
+		    autoplay:5000,
+		    autoplayDisableOnInteraction : false,
+		    // 如果需要分页器
+		    pagination: '.swiper-pagination',
+	  	})
+	},800)*/
+	
+	var bannerInnerHtml = $('.banner'),
+		NavInnerHtml = $('.main-wrap nav ul'),
+		activityBannerImg = $('.activity-banner img'),
+		toplicLcImg = $('.topic-content .lc img'),
+		toplicRcInnerH = $('.topic-content .rc'),
+		specialConUl = $('.special-con ul'),
+		rankConUl = $('.rank-con ul'),
+		newgoodsUl = $('.newgoods-wrap'),
+		sBannerHtml = '',
+		sToplicRcHtml = '',
+		specialConHtml = '',
+		rankConHtml = '',
+		sNavHtml = '';
+//	console.log(bannerHtml);
+	$.ajax({
+		type:"GET",
+		url:"http://bhb.b5m.com/api/korea/?action=cmsConfig",
+		dataType:"jsonp",
+		jsonp:"jsonpCallback",
+		async:true,
+		success:function(data){
+			// console.log(data);
+			data.banner.forEach(function(v,k){
+				sBannerHtml += `<div class="swiper-slide"><img src="`+ v.photourl +`"></div>`
+			});
+			bannerInnerHtml.html(sBannerHtml);
+			//banner
+			var mySwiper = new Swiper ('.swiper-container', {
+			    // direction: 'vertical',
+			    loop: true,
+			    autoplay:5000,
+			    autoplayDisableOnInteraction : false,
+			    // 如果需要分页器
+			    pagination: '.swiper-pagination',
+	  	    });
+			data.into.forEach(function(v,k){
+				sNavHtml += `<li onclick="location='`+ v.url +`'"><img src="`+ v.photourl +`"><span>`+ v.name +`</span></li>`
+			});
+			NavInnerHtml.html(sNavHtml);
+			activityBannerImg.attr({src:data.activitybanner[0].photourl});
+		}
+	});
+	//今日活动
+	$.ajax({
+		type:"GET",
+		url:"http://bhb.b5m.com/api/korea/?action=appActivity",
+		dataType:"jsonp",
+		jsonp:"jsonpCallback",
+		async:true,
+		success:function(data){
+			toplicLcImg.attr({src:data.first.imgUrl});
+			data.other.forEach(function(v,k){
+				sToplicRcHtml += `<div><img src="`+ v.imgUrl +`"></div>`
+			});
+			toplicRcInnerH.html(sToplicRcHtml);
+		}
+	});
+	//今日专场
+	$.ajax({
+		type:"GET",
+		url:"http://bhb.b5m.com/api/korea/?action=appSpetoday",
+		dataType:"jsonp",
+		jsonp:"jsonpCallback",
+		async:true,
+		success:function(data){
+			data.first.forEach(function(v,k){
+				specialConHtml += `<li><img src="`+ v.imgUrl +`"></li>`
+			});
+			specialConUl.html(specialConHtml);
+		}
+	});
+	//热卖排行
+	$.ajax({
+		type:"GET",
+		url:"http://bhb.b5m.com/api/korea/?action=BeautyHotSale",
+		dataType:"JSONP",
+		jsonp:"jsonpCallback",
+		success:function(data){
+			// console.log(data);
+			data.forEach(function(v,k){
+				rankConHtml += `<li>
+					<div class="img-wrap"><img src="`+ v.photourl +`"></div>
+					<div class="info-wrap">
+						<div class="title-info"><img src="`+ v.countryurl +`">`+ v.title +`</div>
+					    <div class="price-info">
+					    	<strong class="now-pr">￥`+ v.low_price +`</strong>
+					    	<strong class="ori-pr">￥`+ v.high_price +`</strong>
+					    	<em class="reduce">`+ ((v.low_price/v.high_price)*10).toFixed(1) +`折</em>
+					    </div>
+					</div>
+				</li>`
+			})
+			rankConUl.html(rankConHtml);
+		}
+	});
+
+	//上拉加载商品
+	//iscroll
+	var oPullUp = null,
+		flag = 1,
+		myScroll = null;
+	setTimeout(function(){
+		oPullUp = $('.pull-up');
+		myScroll = new IScroll('#main-wrap',{
+			hScrollbar: false,
+			vScrollbar: false,//隐藏滚动条
+			probeType:2,
+		});
+		myScroll.on('scroll',function(){
+			// console.log(this.y);
+			if(this.y < this.maxScrollY - 16 && !oPullUp.hasClass('active')){
+				oPullUp.addClass('active').html('松手加载新的商品！');
+			}else if(this.y > this.maxScrollY && oPullUp.hasClass('active')){
+				oPullUp.removeClass('active').html('亲！上拉加载新的商品');
+			}
+		});
+		myScroll.on('scrollEnd',function(){
+			if(oPullUp.hasClass('active')){
+				oPullUp.html('玩命加载中...');
+				setTimeout(function(){
+					flag ++;
+					GetGoods(flag);
+					myScroll.refresh();
+				},800);
+			}
+		});
+		
+	},100)
+	//新品上架
+	function GetGoods(pageNum){
+		$.ajax({
+			type:'GET',
+			url:'http://bhb.b5m.com/api/korea/?action=LadyHotSalePage',
+			dataType:'JSONP',
+			jsonp:'jsonpCallback',
+			data:{
+				page:pageNum
+			},
+			success:function(data){
+				data.forEach(function(v,k){
+					newgoodsUl.append(`<li>
+						<div class="goods-img"><img src="`+ v.photourl +`"></div>
+						<div class="goods-title"><img src="`+ v.countryurl +`">`+ v.title +`</div>
+						<p class="goods-price"><strong>`+ v.salePrice +`</strong><em></em></p>
+					</li>`)
+				});
+				myScroll.refresh();
+			}
+		})
+	}
+	GetGoods(flag);//页面刷新加载数据
+	
+</script>

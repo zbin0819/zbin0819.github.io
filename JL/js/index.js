@@ -7,7 +7,8 @@ $(function(){
 		switchPage = $('.switch-page'),
 		activeLine = $('.bottom-text span'),
 		skillActiveImg = $('.skill-img img'),
-		lineActive = $('.personal-info .line');
+		lineActive = $('.personal-info .line'),
+		timeLine = $('.time-line');
 		
 	setTimeout(function(){				//设置头像延时旋转
 		imgRotate.addClass('img-rotate');
@@ -34,6 +35,7 @@ $(function(){
 	    	lineActive.removeClass('line-active');
 	    	skillActiveImg.removeClass('active-img');
 	    	skillActiveImg.css({display:'none'});
+	    	timeLine.animate({height:0});
 	    	if(swiper.activeIndex == 0){
 	    		setTimeout(function(){	//页面切换后设置头像延时旋转
 	    			imgRotate.addClass('img-rotate');
@@ -57,8 +59,8 @@ $(function(){
 		    		skillActiveImg.addClass('active-img');
 	    		},500)
 	    	}
-	    	if(swiper.activeIndex == 3){
-	    		
+	    	if(swiper.activeIndex == 4){
+	    		timeLine.animate({height:'100%'},2000);
 	    	}
 	    	swiperAnimate(swiper); 		//每个slide切换结束时也运行当前slide动画
 	    },
@@ -76,6 +78,14 @@ $(function(){
 			shadowScale: 0.6
 		}
     }); 
+    var swiperV = new Swiper('.swiper-container-v', {  
+  		loop:true,
+  		pagination: '.swiper-pagination-v',
+  		paginationType : 'bullets',
+	    effect : 'coverflow',
+		slidesPerView: 1,
+		centeredSlides: true,
+    });
   	//音乐按钮
   	musicBtn.click(function(){
   		if($(this).data('btn') != true){
