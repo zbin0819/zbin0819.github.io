@@ -312,10 +312,9 @@ img{
 .third-slide .skill-wrap ul li{
 	width: 100%;
 	height: 15%;
-	line-height: .68rem;
 	border-bottom: 1px solid  #ccc;
 	color: #FFF;
-	padding:0 6px;
+	padding:10px 0 0 6px;
 }
 .third-slide .skill-text{
 	position: absolute;
@@ -364,11 +363,16 @@ img{
 	opacity: 0;
 }
 .fouth-slide .nest-wrap .swiper-slide{
-	background: #f0f0f0;
+	background: rgba(0,0,0,.5);
+}
+.fouth-slide .nest-wrap .swiper-slide img{
+	width: 100%;
+	height: 100%;
 }
 .fouth-slide .nest-wrap .swiper-container-horizontal>.swiper-pagination-bullets{
 	bottom: 4px;
 }
+
 .fifth-slide .experience-show{
 	width: 100%;
 	height:70%;
